@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección de Libros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/bg.jpg');
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #FFFDFC;
+            font-size: 25px;
+            font-weight: 800;
+            z-index: 1;
+        }
+
+        .menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu .navbar ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu .navbar ul li {
+            position: relative;
+        }
+
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #bb5c2d;
+            display: block;
+            font-weight: 200;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .menu .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #bb5c2d;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .menu .navbar ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .menu .navbar ul li a:hover {
+            color: #CE967B;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .header-content h1 {
+            font-size: 40px;
+            line-height: 80px;
+            color: #9c4141;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        .header-content p {
+            font-size: 16px;
+            color: #c58181;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-container {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel .book {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        .carousel .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel .book .info {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .carousel .book p {
+            font-size: 14px;
+            color: #323337;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .footer {
+            padding: 40px 20px;
+            background-color: #000000;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width: 991px) {
+            .menu {
+                padding: 30px;
+            }
+
+            .header {
+                min-height: 0vh;
+            }
+
+            .header-content {
+                padding: 100px 30px;
+            }
+
+            .carousel {
+                flex-direction: column;
+            }
+        }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/bg.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #bb5c2d;
+    display: block;
+    font-weight: 200;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.menu .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #bb5c2d;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.menu .navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu .navbar ul li a:hover {
+    color: #CE967B;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 40px;
+    line-height: 80px;
+    color: #9c4141;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #832323;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #CE967B;
+    color: #F9FAFC;
+    text-transform: uppercase;
+}
+
+.btn-1:hover {
+    background-color: #ebad8d;
+}
+
+.coffee {
+    padding: 100px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+
+.coffee-content {
+    text-align: center;
+}
+
+.coffee-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    padding: 0 250p;
+    margin-bottom: 15px;
+}
+
+.txt-p {
+    font-size: 16px;
+    color: #4c4f5f;
+    padding: 0  250px;
+    margin-bottom: 35px;
+}
+
+.coffee-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.coffee-1 {
+    padding: 0 25px;
+}
+
+.coffee-1 img {
+    width: 200px;
+}
+
+.coffee-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.coffee-1 h3 {
+    color: #323337;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.services {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/bg2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+.services-content {
+    text-align: center;
+}
+
+.services-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #bd5441;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.services-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+
+.services-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.services-1 {
+    padding: 0 100px;
+}
+
+.services-1 img {
+    width: 25px;
+    margin-bottom: 15px;
+}
+
+.services-1 h3 {
+    color: #EACCB3;
+    font-size: 18px;
+}
+
+.general {
+    display: flex;
+}
+
+.general-1 {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #E1E2E6;
+}
+
+.general-2 {
+    background-image: url(images/front-view-hardback-books-library.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.general-3 {
+    background-image: url(images/bookshelf-books-education-knowledge-study.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #414247;
+    margin: 25px 0 45px;
+}
+
+.blog {
+    padding: 100px;
+    text-align: center;
+}
+
+.blog-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-1 {
+    padding: 15px 55px;
+}
+
+.blog-1 img {
+    width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.blog-1 h3 {
+    font-size: 25px;
+    color: #323337;
+}
+
+.footer {
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+link h3 {
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a {
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 991px) {
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+    .header {
+        min-height: 0vh;
+    }
+    .header-content {
+        padding: 100px 30px;
+    }
+    .header-content p {
+        padding: 0;
+    }
+    .coffee {
+        padding: 0;
+    }
+    .coffee-content h2 {
+        padding: 0;
+    }
+    .txt-p {
+        padding: 0;
+    }
+    .coffee-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .coffee-img {
+        display: none;
+    }
+    .services {
+        padding: 30px;
+    }
+    .services-content p {
+        padding: 0;
+    }
+    .services-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .services-1 {
+        margin-bottom: 25px;
+    }
+    .general {
+        flex-direction: column;
+    }
+    .general-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    .general-2, .general-3 {
+        display: none;
+    }
+    .blog {
+        padding: 30px;
+    }
+    .blog-content {
+        flex-direction: column;
+    }
+    .blog-1 {
+        padding: 0;
+    }
+    .footer {
+        padding: 30px;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Animación de hover para enlaces */
+.menu .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #bb5c2d;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.menu .navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    
+    <div class="header">
+        <div class="menu">
+            
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html" class="animated-link">Inicio</a></li>
+                    <li><a href="servicios.html" class="animated-link">Servicios</a></li>
+                    <li><a href="quienessomos.html" class="animated-link">Quiénes somos</a></li>
+                    <li><a href="contacto.html" class="animated-link">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-content container">
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="randomRecommendations" class="container">
+            <h3>Recomendaciones para ti</h3>
+            <div class="carousel-container">
+                <div class="carousel" id="recommendationsContainer"></div>
+                <div class="carousel-nav">
+                    <button id="prevBtn">&#9664;</button>
+                    <button id="nextBtn">&#9654;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"></div>
+            <div class="footer-section"></div>
+        </div>
+    </footer>
+
+    <script>
+        const recommendations = [
+            { title: 'El Principito', author: 'Antoine de Saint-Exupéry', genre: 'Ficción', year: 1943, synopsis: 'Una historia encantadora sobre un joven príncipe que explora el universo...', available: 'Disponible'},
+            { title: 'Orgullo y Prejuicio', author: 'Jane Austen', genre: 'Ficción', year: 1813, synopsis: 'Una obra maestra de la literatura inglesa sobre el amor y la sociedad...', available: 'Disponible'},
+            { title: '1984', author: 'George Orwell', genre: 'Ficción', year: 1949, synopsis: 'Una novela distópica que explora temas de totalitarismo y vigilancia...', available: 'Disponible'},
+            { title: 'Cien Años de Soledad', author: 'Gabriel García Márquez', genre: 'Ficción', year: 1967, synopsis: 'Una obra cumbre del realismo mágico que narra la historia de la familia Buendía...', available: 'Disponible' },
+            { title: 'El Hobbit', author: 'J.R.R. Tolkien', genre: 'Ficción', year: 1937, synopsis: 'La historia de Bilbo Bolsón y su aventura para recuperar el tesoro robado...', available: 'Disponible'},
+            { title: 'Matar a un Ruiseñor', author: 'Harper Lee', genre: 'Ficción', year: 1960, synopsis: 'Una novela sobre la injusticia racial en el sur de Estados Unidos, contada a través de los ojos de una niña...', available: 'Disponible' },
+            { title: 'Don Quijote de la Mancha', author: 'Miguel de Cervantes', genre: 'Ficción', year: 1605, synopsis: 'La historia del hidalgo que pierde la cordura y se convierte en caballero andante...', available: 'Disponible',},
+            { title: 'Harry Potter y la piedra filosofal', author: 'J.K. Rowling', genre: 'Fantasía', year: 1997, synopsis: 'El inicio de la saga de Harry Potter, un joven mago que descubre su destino...', available: 'Disponible'},
+        ];
+
+        const recommendationsContainer = document.getElementById('recommendationsContainer');
+
+        recommendations.forEach(book => {
+            const bookElement = document.createElement('div');
+            bookElement.classList.add('book');
+            bookElement.innerHTML = `
+                < ${book.title}">
+                <div class="info">
+                    <p><strong>Título:</strong> ${book.title}</p>
+                    <p><strong>Autor:</strong> ${book.author}</p>
+                    <p><strong>Género:</strong> ${book.genre}</p>
+                    <p><strong>Año:</strong> ${book.year}</p>
+                    <p><strong>Sinopsis:</strong> ${book.synopsis}</p>
+                    <p><strong>Disponibilidad:</strong> ${book.available}</p>
+                </div>
+            `;
+            recommendationsContainer.appendChild(bookElement);
+        });
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        prevBtn.addEventListener('click', () => {
+            recommendationsContainer.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            recommendationsContainer.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

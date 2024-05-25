@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones de Libros</title>
+    <style>
+        
+
+            body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/bg.jpg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #FFFDFC;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .menu .navbar ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu .navbar ul li {
+            position: relative;
+        }
+
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #bb5c2d;
+            display: block;
+            font-weight: 200;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .menu .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #bb5c2d;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .menu .navbar ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .menu .navbar ul li a:hover {
+            color: #CE967B;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 40px;
+            line-height: 80px;
+            color: #9c4141;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        .header-content p {
+            font-size: 16px;
+            color: #c58181;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-container {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden; /* Ensure the carousel doesn't overflow */
+        }
+
+        .carousel {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-behavior: smooth;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        .carousel .book {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        .carousel .book img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel .book p {
+            font-size: 14px;
+            color: #323337;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .footer {
+            padding: 40px 20px;
+            background-color: #000000;
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width: 991px) {
+            .menu {
+                padding: 30px;
+            }
+
+            .header {
+                min-height: 0vh;
+            }
+
+            .header-content {
+                padding: 100px 30px;
+            }
+
+            .carousel {
+                flex-direction: column;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <div class="logo">Logo</div>
+                <div class="navbar">
+                    <ul>
+                        <li><a href="index.html" class="animated-link">Inicio</a></li>
+                        <li><a href="servicios.html" class="animated-link">Servicios</a></li>
+                        <li><a href="quienessomos.html" class="animated-link">Quienes Somos</a></li>
+                        <li><a href="contacto.html" class="animated-link">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-content container">
+<hr>
+</hr>
+<hr>
+</hr>
+<hr>
+</hr>
+    <div class="header-content container">
+         
+
+    
+
+<main>
+        <section id="randomRecommendations">
+            <h2>Recomendaciones para ti</h2>
+            <div class="carousel" id="recommendationsContainer">
+         
+            </div>
+        </section>
+    </main>
+
+
+
+
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+           
+        </div>
+        <div class="footer-section">
+          
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+
+
+
+
+
+
+    
+    
+   
+</div>
+    
+    <script>
+        const recommendations = [
+            { title: 'El Principito', author: 'Antoine de Saint-Exupéry', genre: 'Ficción', year: 1943, synopsis: 'Una historia encantadora sobre un joven príncipe que explora el universo...', available: 'Disponible', cover: 'cover1.jpg' },
+            { title: 'Orgullo y Prejuicio', author: 'Jane Austen', genre: 'Ficción', year: 1813, synopsis: 'Una obra maestra de la literatura inglesa sobre el amor y la sociedad...', available: 'Disponible', cover: 'cover2.jpg' },
+            { title: '1984', author: 'George Orwell', genre: 'Ficción', year: 1949, synopsis: 'Una novela distópica que explora temas de totalitarismo y vigilancia...', available: 'Disponible', cover: 'cover3.jpg' },
+            { title: 'Cien Años de Soledad', author: 'Gabriel García Márquez', genre: 'Ficción', year: 1967, synopsis: 'Una obra cumbre del realismo mágico que narra la historia de la familia Buendía...', available: 'Disponible', cover: 'cover4.jpg' },
+            { title: 'El Hobbit', author: 'J.R.R. Tolkien', genre: 'Ficción', year: 1937, synopsis: 'La historia de Bilbo Bolsón y su aventura para recuperar el tesoro robado...', available: 'Disponible', cover: 'cover5.jpg' },
+            { title: 'Matar a un Ruiseñor', author: 'Harper Lee', genre: 'Ficción', year: 1960, synopsis: 'Una novela sobre la injusticia racial en el sur de Estados Unidos...', available: 'Disponible', cover: 'cover6.jpg' },
+            { title: 'Don Quijote de la Mancha', author: 'Miguel de Cervantes', genre: 'Ficción', year: 1605, synopsis: 'La historia del ingenioso hidalgo Don Quijote y su escudero Sancho Panza...', available: 'Disponible', cover: 'cover7.jpg' },
+            { title: 'Los Juegos del Hambre', author: 'Suzanne Collins', genre: 'Ficción', year: 2008, synopsis: 'En un futuro distópico, Katniss Everdeen debe luchar por su vida en los Juegos del Hambre...', available: 'Disponible', cover: 'cover8.jpg' },
+            { title: 'Harry Potter y la Piedra Filosofal', author: 'J.K. Rowling', genre: 'Ficción', year: 1997, synopsis: 'El inicio de la saga de Harry Potter, un joven mago que descubre su destino...', available: 'Disponible', cover: 'cover9.jpg' },
+            { title: 'Crónica de una Muerte Anunciada', author: 'Gabriel García Márquez', genre: 'Ficción', year: 1981, synopsis: 'Una novela breve que narra los eventos que llevaron a la muerte de Santiago Nasar...', available: 'Disponible', cover: 'cover10.jpg' },
+            { title: 'La Sombra del Viento', author: 'Carlos Ruiz Zafón', genre: 'Ficción', year: 2001, synopsis: 'Un joven encuentra un libro en un misterioso Cementerio de los Libros Olvidados...', available: 'Disponible', cover: 'cover11.jpg' },
+            { title: 'El Código Da Vinci', author: 'Dan Brown', genre: 'Ficción', year: 2003, synopsis: 'Un thriller que sigue al simbologista Robert Langdon mientras desentraña secretos...', available: 'Disponible', cover: 'cover12.jpg' }
+            // Agrega más libros aquí
+        ];
+
+        function getRandomBooks(num) {
+            const shuffled = recommendations.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, num);
+        }
+
+        function displayRandomRecommendations() {
+            const recommendationsContainer = document.getElementById('recommendationsContainer');
+            recommendationsContainer.innerHTML = '';
+            const randomBooks = getRandomBooks(10); // Muestra 10 libros aleatorios
+
+            randomBooks.forEach(book => {
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'book';
+                bookDiv.innerHTML = `
+                    <img src="${book.cover}" alt="${book.title}">
+                    <div class="info">
+                        <p><strong>Título:</strong> ${book.title}</p>
+                        <p><strong>Autor:</strong> ${book.author}</p>
+                        <p><strong>Género:</strong> ${book.genre}</p>
+                        <p><strong>Año:</strong> ${book.year}</p>
+                        <p><strong>Sinopsis:</strong> ${book.synopsis}</p>
+                        <p><strong>Disponibilidad:</strong> ${book.available}</p>
+                    </div>
+                `;
+                recommendationsContainer.appendChild(bookDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', displayRandomRecommendations);
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

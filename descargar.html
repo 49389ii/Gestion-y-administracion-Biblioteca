@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/bg.jpg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .logo {
+            color: #FFFDFC;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .menu .navbar ul li {
+            position: relative;
+            float: left;
+        }
+
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #bb5c2d;
+            display: block;
+            font-weight: 200;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .menu .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #bb5c2d;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .menu .navbar ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .menu .navbar ul li a:hover {
+            color: #CE967B;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 40px;
+            line-height: 80px;
+            color: #9c4141;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+        }
+
+        .header-content p {
+            font-size: 16px;
+            color: #832323;
+            padding: 0 250px;
+            margin-bottom: 25px;
+        }
+
+        .btn-1 {
+            display: inline-block;
+            padding: 11px 35px;
+            background-color: #CE967B;
+            color: #F9FAFC;
+            text-transform: uppercase;
+        }
+
+        .btn-1:hover {
+            background-color: #ebad8d;
+        }
+
+        .coffee {
+            padding: 100px 0;
+            background-color: #E1E2E6;
+            position: relative;
+        }
+
+        .coffee-content {
+            text-align: center;
+        }
+
+        .coffee-content h2 {
+            font-size: 55px;
+            line-height: 70px;
+            color: #323337;
+            text-transform: uppercase;
+            padding: 0 250p;
+            margin-bottom: 15px;
+        }
+
+        .txt-p {
+            font-size: 16px;
+            color: #4c4f5f;
+            padding: 0  250px;
+            margin-bottom: 35px;
+        }
+
+        .coffee-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .coffee-1 {
+            padding: 0 25px;
+        }
+
+        .coffee-1 img {
+            width: 200px;
+        }
+
+        .coffee-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .coffee-1 h3 {
+            color: #323337;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .services {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/bg2.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 0;
+        }
+
+        .services-content {
+            text-align: center;
+        }
+
+        .services-content h2 {
+            font-size: 55px;
+            
+        }
